@@ -1,0 +1,79 @@
+<header class="site-header">
+  <nav class="site-nav">
+    <div class="nav-container">
+      <div class="site-title">
+        <a href="{{ site.baseurl }}/">💻 {{ site.title }}</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="{{ site.baseurl }}/">Home</a></li>
+        <li><a href="{{ site.baseurl }}/portfolio/">🚀 Portfolio</a></li>
+        <li><a href="{{ site.baseurl }}/learning/">📚 Learning</a></li>
+        <li><a href="{{ site.baseurl }}/tech-stack/">🛠️ Tech Stack</a></li>
+        <li><a href="{{ site.baseurl }}/about/">👤 About</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    background-color: rgba(15, 20, 25, 0.95);
+    border-bottom: 2px solid #FF8F40;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .site-nav {
+    padding: 1em 0;
+  }
+
+  .nav-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-title {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .site-title a {
+    color: #E6E1CF;
+  }
+
+  .nav-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2em;
+  }
+
+  .nav-menu a {
+    color: #E6E1CF;
+    transition: all 0.3s ease;
+  }
+
+  .nav-menu a:hover {
+    color: #FF8F40;
+  }
+
+  @media (max-width: 600px) {
+    .nav-container {
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    .nav-menu {
+      gap: 1em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>

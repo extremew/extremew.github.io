@@ -1,0 +1,50 @@
+// Ayu Dark Color Palette
+// Reference: https://ayutheme.com/
+
+// Primary Colors
+$ayu-background: #0F1419;
+$ayu-foreground: #E6E1CF;
+
+// Accent Colors
+$ayu-primary: #FF8F40;      // Warm orange for CTAs & highlights
+$ayu-secondary: #AAD94C;    // Bright green for success/active states
+$ayu-tertiary: #39BAE6;     // Soft blue for links & interactive elements
+$ayu-warning: #FFCC66;      // Gold/yellow for warnings
+$ayu-error: #FF6B6B;        // Red for errors
+
+// Neutral/Muted Colors
+$ayu-comment: #626A73;      // Gray for comments & muted text
+$ayu-function: #FFB454;     // Orange-yellow for function names
+$ayu-string: #AAD94C;       // Green for strings (same as secondary)
+$ayu-keyword: #FF8F40;      // Orange for keywords (same as primary)
+
+// Semantic Color Variables
+$color-background: $ayu-background;
+$color-text: $ayu-foreground;
+$color-primary-accent: $ayu-primary;
+$color-secondary-accent: $ayu-secondary;
+$color-link: $ayu-tertiary;
+$color-border: lighten($ayu-background, 15%);
+$color-hover-bg: lighten($ayu-background, 8%);
+$color-muted: $ayu-comment;
+
+// Typography Colors
+$color-heading: $ayu-foreground;
+$color-code-text: $ayu-function;
+$color-code-bg: darken($ayu-background, 5%);
+
+// Spacing & Base Values
+$base-font-size: 16px;
+$base-line-height: 1.6;
+$base-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+$code-font-family: "Monaco", "Menlo", "Ubuntu Mono", "Consolas", "source-code-pro", monospace;
+
+// Breakpoints
+$small-screen: 600px;
+$medium-screen: 768px;
+$large-screen: 1024px;
+$extra-large-screen: 1440px;
+
+// Transitions
+$transition-default: all 0.3s ease;
+$transition-fast: all 0.1s ease;

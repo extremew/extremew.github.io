@@ -1,0 +1,65 @@
+# Site Configuration
+title: "Tech Portfolio"
+description: "Explore my tech journey, projects, and the tools I use"
+author: "Your Name"
+url: "https://yourusername.github.io"
+baseurl: ""
+
+# Theme - using remote_theme for GitHub Pages compatibility
+remote_theme: heiswayi/thinkspace
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jemoji
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /portfolio/:name/
+  pages:
+    output: true
+    permalink: /:name/
+
+# Pagination
+paginate: 10
+paginate_path: "/page/:num/"
+
+# Markdown processor
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+  auto_ids: true
+  toc_levels: 1..6
+
+# Sass/SCSS
+sass:
+  sass_dir: _sass
+  style: compressed
+  quiet_deps: true
+  output_style: compressed
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - .gitignore
+
+# Social media links
+social_links:
+  github: yourusername
+  linkedin: yourusername
+  twitter: yourusername
+
+# Post defaults
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      permalink: /blog/:year/:month/:day/:title/

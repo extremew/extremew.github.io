@@ -1,0 +1,115 @@
+---
+layout: default
+---
+
+<article class="project">
+  <header class="project-header">
+    <h1 class="project-title">{{ page.title }}</h1>
+    {% if page.description %}
+      <p class="project-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="project-meta">
+    {% if page.tech_stack %}
+      <div class="tech-stack">
+        <h3>🛠️ Tech Stack</h3>
+        <div class="tech-list">
+          {% for tech in page.tech_stack %}
+            <span class="badge">{{ tech }}</span>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% if page.links %}
+      <div class="project-links">
+        <h3>🔗 Links</h3>
+        <div class="links-list">
+          {% if page.links.github %}
+            <a href="{{ page.links.github }}" class="btn" target="_blank">🐙 GitHub</a>
+          {% endif %}
+          {% if page.links.live %}
+            <a href="{{ page.links.live }}" class="btn" target="_blank">🚀 Live Demo</a>
+          {% endif %}
+          {% if page.links.blog %}
+            <a href="{{ page.links.blog }}" class="btn" target="_blank">📝 Blog Post</a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="project-content">
+    {{ content }}
+  </div>
+</article>
+
+<style>
+  .project {
+    background-color: rgba(15, 20, 25, 0.5);
+    border: 1px solid #626A73;
+    border-radius: 8px;
+    padding: 2em;
+    margin: 2em 0;
+  }
+
+  .project-header {
+    margin-bottom: 2em;
+  }
+
+  .project-title {
+    margin: 0 0 0.5em 0;
+    color: #FFB454;
+  }
+
+  .project-description {
+    color: #626A73;
+    font-size: 1.1em;
+    margin: 0.5em 0 0 0;
+  }
+
+  .project-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    margin: 2em 0;
+    padding: 1.5em 0;
+    border-top: 1px solid #626A73;
+    border-bottom: 1px solid #626A73;
+  }
+
+  .tech-stack h3,
+  .project-links h3 {
+    margin: 0 0 1em 0;
+    color: #FFB454;
+  }
+
+  .tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+  }
+
+  .links-list {
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+  }
+
+  .project-content {
+    line-height: 1.8;
+    color: #E6E1CF;
+  }
+
+  @media (max-width: 768px) {
+    .project-meta {
+      grid-template-columns: 1fr;
+      gap: 1.5em;
+    }
+
+    .project {
+      padding: 1.5em;
+    }
+  }
+</style>

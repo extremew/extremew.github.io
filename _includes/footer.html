@@ -1,0 +1,82 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    <div class="footer-section">
+      <h4>🔗 Connect</h4>
+      <ul class="social-links">
+        {% if site.social_links.github %}
+          <li><a href="https://github.com/{{ site.social_links.github }}" target="_blank">🐙 GitHub</a></li>
+        {% endif %}
+        {% if site.social_links.linkedin %}
+          <li><a href="https://linkedin.com/in/{{ site.social_links.linkedin }}" target="_blank">💼 LinkedIn</a></li>
+        {% endif %}
+        {% if site.social_links.twitter %}
+          <li><a href="https://twitter.com/{{ site.social_links.twitter }}" target="_blank">🐦 Twitter</a></li>
+        {% endif %}
+      </ul>
+    </div>
+    <div class="footer-section">
+      <p>&copy; 2026 {{ site.author }}. Built with ❤️ using Jekyll + Thinkspace.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background-color: rgba(15, 20, 25, 0.95);
+    border-top: 2px solid #AAD94C;
+    padding: 2em 1em;
+    margin-top: 3em;
+  }
+
+  .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .footer-section {
+    flex: 1;
+  }
+
+  .footer-section h4 {
+    margin: 0 0 1em 0;
+    color: #FFB454;
+  }
+
+  .social-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1.5em;
+  }
+
+  .social-links a {
+    color: #39BAE6;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .social-links a:hover {
+    color: #FF8F40;
+  }
+
+  .footer-section p {
+    color: #E6E1CF;
+    margin: 0;
+  }
+
+  @media (max-width: 600px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .social-links {
+      justify-content: center;
+    }
+  }
+</style>
