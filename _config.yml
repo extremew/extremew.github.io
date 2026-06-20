@@ -1,13 +1,13 @@
 title: Tech & Learning Lab
-tagline: Thoughts on software, learning, and modern development
+tagline: Thoughts on software, technologies, cybersecurity, learning, and development
 author:
   name: Your Name
-  email: your.email@example.com
+  email: ewgithub@nxuser.mozmail.com
 description: >-
-  A modern minimalist blog about technology, software development,
+  A modern minimalist blog about technology, cybersecurity development,
   and continuous learning. Featuring articles, tutorials, and portfolio projects.
 
-url: "https://yourusername.github.io"
+url: "https://extremew.github.io"
 baseurl: ""
 
 # Theme & Plugins
@@ -49,7 +49,7 @@ social:
   name: Your Name
   links:
     - https://twitter.com/your_twitter
-    - https://github.com/yourusername
+    - https://github.com/extremew
     - https://linkedin.com/in/yourprofile
 
 # GitHub Pages settings
