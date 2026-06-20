@@ -1,0 +1,275 @@
+// Ayu Dark Color Scheme
+// Modern minimalist dark theme with cyan accents
+
+// Base Colors
+$color-bg: #0d1117;           // Deep dark background
+$color-surface: #161b22;      // Slightly lighter surface
+$color-text: #b3b1ad;         // Main text color
+$color-text-secondary: #8b8680; // Secondary text
+$color-accent: #5ccfe6;       // Cyan accent
+$color-accent-alt: #ffd580;   // Orange/yellow accent
+$color-success: #90e1c6;      // Green/teal
+$color-warning: #f28779;      // Red/orange
+$color-link: #5ccfe6;         // Cyan for links
+$color-border: #30363d;       // Border color
+
+// Typography
+$font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+$font-size-base: 16px;
+$font-size-small: 14px;
+$font-size-large: 18px;
+$line-height-base: 1.6;
+
+// Spacing
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 24px;
+$spacing-xl: 32px;
+
+// Global Styles
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  color: $color-text;
+  font-weight: 600;
+  margin-bottom: $spacing-md;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+  margin-bottom: $spacing-md;
+}
+
+// Links
+a {
+  color: $color-accent;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $color-accent-alt;
+  }
+}
+
+// Code & Preformatted
+code {
+  background-color: $color-surface;
+  color: $color-accent;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: "SFMono-Regular", "Consolas", "Liberation Mono", "Menlo", monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  padding: $spacing-md;
+  overflow-x: auto;
+
+  code {
+    background-color: transparent;
+    padding: 0;
+  }
+}
+
+// Blockquotes
+blockquote {
+  border-left: 4px solid $color-accent;
+  color: $color-text-secondary;
+  margin: $spacing-md 0;
+  padding-left: $spacing-md;
+}
+
+// Lists
+ul, ol {
+  margin-left: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+li {
+  margin-bottom: $spacing-sm;
+}
+
+// Tables
+table {
+  border-collapse: collapse;
+  margin: $spacing-md 0;
+  width: 100%;
+}
+
+th {
+  background-color: $color-surface;
+  color: $color-text;
+  border: 1px solid $color-border;
+  padding: $spacing-sm $spacing-md;
+  text-align: left;
+  font-weight: 600;
+}
+
+td {
+  border: 1px solid $color-border;
+  padding: $spacing-sm $spacing-md;
+}
+
+tr:hover {
+  background-color: rgba($color-accent, 0.05);
+}
+
+// Horizontal Rule
+hr {
+  border: none;
+  border-top: 1px solid $color-border;
+  margin: $spacing-lg 0;
+}
+
+// Container
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+// Header
+header {
+  background-color: $color-surface;
+  border-bottom: 1px solid $color-border;
+  padding: $spacing-lg $spacing-md;
+  margin-bottom: $spacing-xl;
+
+  nav {
+    a {
+      margin-right: $spacing-lg;
+      color: $color-text;
+      transition: color 0.2s ease;
+
+      &:hover {
+        color: $color-accent;
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $color-surface;
+  border-top: 1px solid $color-border;
+  padding: $spacing-lg $spacing-md;
+  margin-top: $spacing-xl;
+  text-align: center;
+  color: $color-text-secondary;
+  font-size: $font-size-small;
+}
+
+// Posts & Articles
+article {
+  margin-bottom: $spacing-xl;
+
+  header {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin-bottom: $spacing-lg;
+
+    h1, h2 {
+      margin-bottom: $spacing-sm;
+    }
+  }
+}
+
+.post-meta {
+  color: $color-text-secondary;
+  font-size: $font-size-small;
+  margin-bottom: $spacing-md;
+}
+
+.post-tags {
+  margin-top: $spacing-md;
+
+  a {
+    background-color: $color-surface;
+    border: 1px solid $color-border;
+    border-radius: 20px;
+    color: $color-accent;
+    display: inline-block;
+    margin-right: $spacing-sm;
+    margin-bottom: $spacing-sm;
+    padding: 4px 12px;
+    font-size: $font-size-small;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: $color-accent;
+      color: $color-bg;
+    }
+  }
+}
+
+// Buttons
+button, .btn {
+  background-color: $color-accent;
+  color: $color-bg;
+  border: none;
+  border-radius: 6px;
+  padding: $spacing-sm $spacing-md;
+  font-size: $font-size-base;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: $color-accent-alt;
+  }
+}
+
+// Form Elements
+input, textarea, select {
+  background-color: $color-surface;
+  border: 1px solid $color-border;
+  color: $color-text;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 6px;
+  font-family: $font-family;
+  font-size: $font-size-base;
+
+  &:focus {
+    outline: none;
+    border-color: $color-accent;
+    box-shadow: 0 0 0 3px rgba($color-accent, 0.1);
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  h1 { font-size: 1.75em; }
+  h2 { font-size: 1.5em; }
+  h3 { font-size: 1.25em; }
+
+  .container {
+    padding: 0 $spacing-md;
+  }
+
+  header {
+    padding: $spacing-md;
+  }
+
+  nav a {
+    display: block;
+    margin-right: 0;
+    margin-bottom: $spacing-sm;
+  }
+}

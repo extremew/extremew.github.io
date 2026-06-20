@@ -1,0 +1,161 @@
+---
+layout: default
+---
+
+<article class="portfolio-item">
+  <header class="item-header">
+    <h1 class="item-title">{{ page.title }}</h1>
+    <p class="item-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%B %Y" }}
+      </time>
+      {% if page.categories %}
+        • {% for category in page.categories %}<span class="category">{{ category }}</span>{% endfor %}
+      {% endif %}
+    </p>
+    {% if page.tags %}
+      <div class="item-tags">
+        {% for tag in page.tags %}
+          <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </header>
+
+  <div class="item-content">
+    {{ content }}
+  </div>
+
+  <footer class="item-footer">
+    <a href="/portfolio/" class="back-link">← Back to Portfolio</a>
+  </footer>
+</article>
+
+<style>
+.portfolio-item {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.item-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border, #30363d);
+  padding-bottom: 2rem;
+}
+
+.item-title {
+  font-size: 2.5em;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.item-meta {
+  color: var(--color-text-secondary, #8b8680);
+  font-size: 0.95em;
+  margin-bottom: 1rem;
+}
+
+.category {
+  background: rgba(92, 207, 230, 0.1);
+  color: var(--color-accent, #5ccfe6);
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  font-size: 0.9em;
+  display: inline-block;
+}
+
+.item-tags {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: var(--color-surface, #161b22);
+  border: 1px solid var(--color-border, #30363d);
+  color: var(--color-accent, #5ccfe6);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85em;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: var(--color-accent, #5ccfe6);
+  color: var(--color-bg, #0d1117);
+  border-color: var(--color-accent, #5ccfe6);
+}
+
+.item-content {
+  font-size: 1.05em;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.item-content h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.item-content h3 {
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.item-content ul,
+.item-content ol {
+  margin-left: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.item-content li {
+  margin-bottom: 0.5rem;
+}
+
+.item-content code {
+  background: var(--color-surface, #161b22);
+  padding: 0.2rem 0.4rem;
+}
+
+.item-content pre {
+  background: var(--color-surface, #161b22);
+  border: 1px solid var(--color-border, #30363d);
+  margin: 1.5rem 0;
+}
+
+.item-footer {
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-border, #30363d);
+}
+
+.back-link {
+  color: var(--color-accent, #5ccfe6);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  color: var(--color-accent-alt, #ffd580);
+}
+
+@media (max-width: 768px) {
+  .portfolio-item {
+    padding: 1rem;
+  }
+
+  .item-title {
+    font-size: 1.75em;
+  }
+
+  .item-content {
+    font-size: 1em;
+  }
+
+  .item-tags {
+    flex-direction: column;
+  }
+}
+</style>

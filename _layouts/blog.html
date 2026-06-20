@@ -1,0 +1,128 @@
+---
+layout: default
+---
+
+<div class="blog-container">
+  <header class="blog-header">
+    <h1>{{ page.title }}</h1>
+    <p class="subtitle">{{ page.subtitle | default: 'Thoughts on technology, development, and continuous learning' }}</p>
+  </header>
+
+  <div class="blog-grid">
+    {% for post in site.posts %}
+      <article class="blog-card">
+        <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+        <p class="blog-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">
+            {{ post.date | date: "%B %d, %Y" }}
+          </time>
+          {% if post.categories %}
+            {% for category in post.categories %}
+              <span class="blog-category">{{ category }}</span>
+            {% endfor %}
+          {% endif %}
+        </p>
+        <p class="excerpt">{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+        <a href="{{ post.url }}" class="read-more">Continue Reading →</a>
+      </article>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+.blog-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.blog-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--color-border, #30363d);
+  padding-bottom: 2rem;
+}
+
+.blog-header h1 {
+  font-size: 3em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #5ccfe6 0%, #ffd580 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  color: var(--color-text-secondary, #8b8680);
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.blog-card {
+  background: var(--color-surface, #161b22);
+  border: 1px solid var(--color-border, #30363d);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.blog-card:hover {
+  border-color: var(--color-accent, #5ccfe6);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(92, 207, 230, 0.15);
+}
+
+.blog-card h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.3em;
+  line-height: 1.3;
+}
+
+.blog-card a {
+  color: var(--color-text, #b3b1ad);
+}
+
+.blog-card:hover a {
+  color: var(--color-accent, #5ccfe6);
+}
+
+.blog-meta {
+  font-size: 0.9em;
+  color: var(--color-text-secondary, #8b8680);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.blog-category {
+  background: rgba(92, 207, 230, 0.1);
+  color: var(--color-accent, #5ccfe6);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.excerpt {
+  color: var(--color-text-secondary, #8b8680);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.read-more {
+  color: var(--color-accent, #5ccfe6);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.read-more:hover {
+  opacity: 0.8;
+}
+</style>

@@ -1,0 +1,69 @@
+title: Tech & Learning Lab
+tagline: Thoughts on software, learning, and modern development
+author:
+  name: Your Name
+  email: your.email@example.com
+description: >-
+  A modern minimalist blog about technology, software development,
+  and continuous learning. Featuring articles, tutorials, and portfolio projects.
+
+url: "https://yourusername.github.io"
+baseurl: ""
+
+# Theme & Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Build settings
+markdown: kramdown
+kramdown:
+  parse_block_html: true
+
+# Don't use remote theme - use bundled Minima theme
+# We'll override completely with custom layouts
+
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Your Name"
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "portfolio-item"
+
+# SEO Configuration
+twitter:
+  username: your_twitter
+
+social:
+  name: Your Name
+  links:
+    - https://twitter.com/your_twitter
+    - https://github.com/yourusername
+    - https://linkedin.com/in/yourprofile
+
+# GitHub Pages settings
+github: [metadata]
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

@@ -1,0 +1,202 @@
+---
+layout: default
+---
+
+<div class="page-container">
+  <header class="page-header">
+    <h1>{{ page.title }}</h1>
+  </header>
+
+  <main class="page-content">
+    <h1 id="portfolio">Portfolio</h1>
+
+    <p>A showcase of projects and contributions that demonstrate my expertise across full-stack development, data visualization, and open-source collaboration.</p>
+
+    <h2 id="featured-projects">Featured Projects</h2>
+
+    {% for item in site.portfolio %}
+      <div class="portfolio-item">
+        <h3><a href="{{ item.url }}">{{ item.title }}</a></h3>
+        <p class="portfolio-meta">{{ item.date | date: "%B %Y" }} | {% for tag in item.tags %}<span class="tag">{{ tag }}</span> {% endfor %}</p>
+        <p>{{ item.excerpt }}</p>
+        <a href="{{ item.url }}" class="read-more">View Project →</a>
+      </div>
+    {% endfor %}
+
+    <h2 id="areas-of-expertise">Areas of Expertise</h2>
+
+    <h3 id="frontend-development">Frontend Development</h3>
+    <ul>
+      <li>React, Vue, TypeScript</li>
+      <li>Responsive design, performance optimization</li>
+      <li>User experience &amp; accessibility</li>
+    </ul>
+
+    <h3 id="backend-development">Backend Development</h3>
+    <ul>
+      <li>Node.js, Python, REST APIs</li>
+      <li>Database design &amp; optimization</li>
+      <li>Microservices architecture</li>
+    </ul>
+
+    <h3 id="devops--infrastructure">DevOps &amp; Infrastructure</h3>
+    <ul>
+      <li>CI/CD pipelines (GitHub Actions, Jenkins)</li>
+      <li>Docker &amp; Kubernetes containerization</li>
+      <li>Cloud platforms (AWS, GCP)</li>
+    </ul>
+
+    <h3 id="data--analytics">Data &amp; Analytics</h3>
+    <ul>
+      <li>Data visualization (D3.js)</li>
+      <li>Business intelligence dashboards</li>
+      <li>Data pipeline development</li>
+    </ul>
+
+    <h2 id="technologies">Technologies</h2>
+
+    <pre><code>Languages: JavaScript, TypeScript, Python, SQL
+Frameworks: React, Vue, Node.js, Flask, Express
+Tools: Docker, Kubernetes, Git, AWS
+Databases: PostgreSQL, MongoDB, Redis
+</code></pre>
+
+    <hr />
+
+    <p><em>Open to opportunities and collaborations. Feel free to reach out!</em></p>
+  </main>
+</div>
+
+<style>
+.page-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border, #30363d);
+  padding-bottom: 1rem;
+}
+
+.page-header h1 {
+  font-size: 2.5em;
+  margin: 0;
+  background: linear-gradient(135deg, #5ccfe6 0%, #ffd580 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-content {
+  line-height: 1.8;
+  color: var(--color-text, #b3b1ad);
+}
+
+.page-content h1 {
+  display: none;
+}
+
+.page-content h2 {
+  font-size: 1.8em;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border, #30363d);
+  padding-bottom: 0.5rem;
+  color: var(--color-text, #b3b1ad);
+}
+
+.page-content h3 {
+  font-size: 1.3em;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-accent, #5ccfe6);
+}
+
+.page-content ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.page-content ul li {
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-item {
+  background: var(--color-surface, #161b22);
+  border: 1px solid var(--color-border, #30363d);
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+  border-color: var(--color-accent, #5ccfe6);
+  box-shadow: 0 8px 16px rgba(92, 207, 230, 0.1);
+}
+
+.portfolio-item h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.3em;
+}
+
+.portfolio-item h3 a {
+  color: var(--color-text, #b3b1ad);
+  text-decoration: none;
+}
+
+.portfolio-item:hover h3 a {
+  color: var(--color-accent, #5ccfe6);
+}
+
+.portfolio-meta {
+  font-size: 0.9em;
+  color: var(--color-text-secondary, #8b8680);
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.tag {
+  background: rgba(92, 207, 230, 0.1);
+  color: var(--color-accent, #5ccfe6);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+.portfolio-item p {
+  color: var(--color-text-secondary, #8b8680);
+  margin-bottom: 1rem;
+}
+
+.read-more {
+  color: var(--color-accent, #5ccfe6);
+  text-decoration: none;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+.read-more:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.8em;
+  }
+
+  .page-content h2 {
+    font-size: 1.4em;
+  }
+}
+</style>

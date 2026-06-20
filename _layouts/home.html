@@ -1,0 +1,246 @@
+---
+layout: default
+---
+
+<div class="home-container">
+  <header class="hero">
+    <h1>{{ site.title }}</h1>
+    <p class="tagline">{{ site.tagline }}</p>
+    <nav class="home-nav">
+      <a href="/" class="nav-link">Home</a>
+      <a href="/blog/" class="nav-link">Blog</a>
+      <a href="/portfolio/" class="nav-link">Portfolio</a>
+      <a href="/services/" class="nav-link">Services</a>
+      <a href="/about/" class="nav-link">About</a>
+    </nav>
+  </header>
+
+  <main class="home-content">
+    {{ content }}
+
+    <section class="latest-posts">
+      <h2>Latest Articles</h2>
+      <div class="posts-grid">
+        {% for post in site.posts limit:6 %}
+          <article class="post-card">
+            <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+            <p class="post-meta">
+              <time datetime="{{ post.date | date_to_xmlschema }}">
+                {{ post.date | date: "%B %d, %Y" }}
+              </time>
+              {% if post.categories %}
+                {% for category in post.categories %}
+                  <span class="category">{{ category }}</span>
+                {% endfor %}
+              {% endif %}
+            </p>
+            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+            <a href="{{ post.url }}" class="read-more">Read More →</a>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="view-all">
+        <a href="/blog/" class="btn">View All Articles</a>
+      </div>
+    </section>
+
+    <section class="featured-projects">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        {% for project in site.portfolio limit:3 %}
+          <article class="project-card">
+            <h3><a href="{{ project.url }}">{{ project.title }}</a></h3>
+            <p class="project-meta">{{ project.date | date: "%B %Y" }}</p>
+            <p>{{ project.excerpt | strip_html | truncatewords: 20 }}</p>
+            <p class="project-tags">
+              {% for tag in project.tags %}
+                <span class="tag">{{ tag }}</span>
+              {% endfor %}
+            </p>
+            <a href="{{ project.url }}" class="read-more">View Project →</a>
+          </article>
+        {% endfor %}
+      </div>
+      <div class="view-all">
+        <a href="/portfolio/" class="btn">View All Projects</a>
+      </div>
+    </section>
+  </main>
+</div>
+
+<style>
+.home-container {
+  width: 100%;
+}
+
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(135deg, rgba(92, 207, 230, 0.05) 0%, rgba(255, 213, 128, 0.05) 100%);
+  border-bottom: 1px solid var(--color-border, #30363d);
+  margin-bottom: 4rem;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #5ccfe6 0%, #ffd580 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.tagline {
+  font-size: 1.25em;
+  color: var(--color-text-secondary, #8b8680);
+  margin-bottom: 2rem;
+}
+
+.home-nav {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(92, 207, 230, 0.1);
+}
+
+.home-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem 4rem;
+}
+
+.latest-posts,
+.featured-projects {
+  margin-bottom: 4rem;
+}
+
+.latest-posts h2,
+.featured-projects h2 {
+  margin-bottom: 2rem;
+  font-size: 2em;
+}
+
+.posts-grid,
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.post-card,
+.project-card {
+  background: var(--color-surface, #161b22);
+  border: 1px solid var(--color-border, #30363d);
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.post-card:hover,
+.project-card:hover {
+  border-color: var(--color-accent, #5ccfe6);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(92, 207, 230, 0.1);
+}
+
+.post-card h3,
+.project-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.post-meta,
+.project-meta {
+  font-size: 0.9em;
+  color: var(--color-text-secondary, #8b8680);
+  margin-bottom: 1rem;
+}
+
+.category {
+  background: rgba(92, 207, 230, 0.1);
+  color: var(--color-accent, #5ccfe6);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  font-size: 0.85em;
+}
+
+.project-tags {
+  margin-bottom: 1rem;
+}
+
+.tag {
+  background: var(--color-surface, #161b22);
+  border: 1px solid var(--color-border, #30363d);
+  color: var(--color-accent, #5ccfe6);
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  margin-right: 0.5rem;
+  font-size: 0.85em;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.read-more {
+  color: var(--color-accent, #5ccfe6);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.read-more:hover {
+  color: var(--color-accent-alt, #ffd580);
+}
+
+.view-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--color-accent, #5ccfe6);
+  color: var(--color-bg, #0d1117);
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--color-accent-alt, #ffd580);
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2em;
+  }
+
+  .tagline {
+    font-size: 1.1em;
+  }
+
+  .home-nav {
+    gap: 1rem;
+  }
+
+  .posts-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-content {
+    padding: 0 1rem 2rem;
+  }
+}
+</style>
