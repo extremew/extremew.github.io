@@ -10,7 +10,7 @@ Welcome to the Tech & Learning Lab – a space dedicated to sharing knowledge ab
 
 ## About the Author
 
-Hi! I'm a passionate software engineer with expertise in:
+Hi! I'm a passionate it specialist with expertise in:
 
 - **Full-Stack Development**: React, Node.js, databases
 - **DevOps & Cloud**: AWS, Docker, Kubernetes, CI/CD pipelines
@@ -45,8 +45,8 @@ This blog is built with:
 
 Interested in discussing tech, collaborating, or sharing feedback?
 
-- **Email**: your.email@example.com
-- **GitHub**: [@yourusername](https://github.com/yourusername)
+- **Email**: ewgithub@nxuser.mozmail.com
+- **GitHub**: [@extremew](https://github.com/extremew)
 - **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
 - **LinkedIn**: [Your Name](https://linkedin.com/in/yourprofile)
 
