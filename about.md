@@ -6,7 +6,7 @@ permalink: /about/
 
 # About This Blog
 
-Welcome to the Tech & Learning Lab – a space dedicated to sharing knowledge about modern software development, technology trends, and continuous learning.
+Welcome to the Tech & Learning Lab – a space dedicated to sharing knowledge about cybersecurity, development, technology trends and continuous learning.
 
 ## About the Author
 

@@ -34,7 +34,7 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Your Name"
+      author: "Snowflake"
   - scope:
       path: ""
       type: "portfolio"
@@ -46,7 +46,7 @@ twitter:
   username: your_twitter
 
 social:
-  name: Your Name
+  name: Snowflake
   links:
     - https://twitter.com/your_twitter
     - https://github.com/extremew
